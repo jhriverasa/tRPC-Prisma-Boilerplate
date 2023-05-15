@@ -1,15 +1,25 @@
 {
+  "name": "trpc-prisma-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "prisma generate && prisma migrate deploy",
+    "build": "tsc --project tsconfig.json",
+    "dev": "npx prisma generate && npx prisma migrate dev && tsx watch src/server/index.ts --tsconfig tsconfig.json",
+    "studio": "prisma studio"
+  },
   "dependencies": {
     "@prisma/client": "^4.14.0",
     "@trpc/client": "^10.26.0",
     "@trpc/server": "^10.26.0",
-    "zod": "^3.21.1", 
+    "zod": "^3.21.1",
     "zod-prisma-types": "^2.7.1"
   },
   "devDependencies": {
     "@types/node": "^20.1.4",
     "prisma": "^4.14.0",
     "ts-node": "^10.9.1",
+    "tsx": "^3.12.7",
     "typescript": "^5.0.4"
   }
 }

@@ -11,11 +11,13 @@ generator zod {
   provider = "zod-prisma-types"
 }
 
+// Change to desired provider and its corresponding url if needed
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
+// ------------ MODELS ------------//
 model User {
   id    String @id @unique @default(uuid())
   email String @unique
