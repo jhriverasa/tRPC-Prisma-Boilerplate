@@ -15,7 +15,6 @@ Project contains a minimal setup for a server using tRPC and Prisma
     <br>
    `docker run -p -3306:3306 --name mysql1 -e MYSQL_ROOT_PASSWORD=mypassword -d mysql:latest`
    <br>
-    last command nevertheless is only going to create/run the container, you still need to create the database "mydatabase" (by using [Docker Exec](https://docs.docker.com/engine/reference/commandline/exec/) or terminal for the specific container you just created in Docker Desktop)
 4. Run ``npm run dev`` this command as you can check in package.json, runs 3 commands [Prisma Migrate](https://www.prisma.io/docs/concepts/components/prisma-migrate), [Prisma Generate](https://www.prisma.io/docs/concepts/components/prisma-client/working-with-prismaclient/generating-prisma-client) and starts the tRPC Server, you can check the details in source directory. 
 Prisma generate also has a custom generator named zod, basically helps us to generate zod schemas from Prisma Models, enums, inputTypes, for more info [zod-prisma-types](https://github.com/chrishoermann/zod-prisma-types).
 

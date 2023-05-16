@@ -4,13 +4,14 @@ services:
   db:
     image: mysql:8
     ports:
-      - '3306:3306' # expose pg on port 5932 to not collide with pg from elsewhere
+      - '3306:3306' # 
     expose:
       - '3306'
     volumes:
       - db_data:/var/lib/mysql/data
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQLPASSWORD}
+    command: 
 
 volumes:
   db_data:
